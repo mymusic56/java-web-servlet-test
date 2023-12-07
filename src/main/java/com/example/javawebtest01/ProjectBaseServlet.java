@@ -30,6 +30,11 @@ public class ProjectBaseServlet extends HttpServlet {
 
     public void init() {
         message = "Hello World!-servlet-这是一个基础的Servlet!";
+
+        ServletContext servletContext = getServletContext();
+
+        // 获取数据配置文件信息，放入到上下文中
+        DBPropertiesUtil.init(servletContext);
     }
 
     @Override
@@ -42,9 +47,6 @@ public class ProjectBaseServlet extends HttpServlet {
         System.out.println("pathInfo = " + pathInfo);
 
         ServletContext servletContext = request.getServletContext();
-
-        // 获取数据配置文件信息，放入到上下文中
-        DBPropertiesUtil.init(servletContext);
 
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.setContentType("text/html;charset=UTF-8");
