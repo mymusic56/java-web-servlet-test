@@ -1,11 +1,13 @@
 package com.example.javawebtest01;
 
-import java.io.*;
-import javax.servlet.ServletContext;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public class HelloServlet extends HttpServlet {
     private String message;
 
