@@ -3,6 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!-- Filter 和 Listener 的加载顺序由它们在 web.xml 文件中的声明顺序决定。它们在 web.xml 中的声明顺序决定了它们的初始化和销毁的顺序 -->
+    <filter>
+        <filter-name>MyServletFilter</filter-name>
+        <filter-class>com.example.javawebtest01.core.filter.MyServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyServletFilter</filter-name>
+        <servlet-name>DispatcherServlet</servlet-name>
+    </filter-mapping>
+    <listener>
+        <listener-class>com.example.javawebtest01.core.listener.MyServletListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>DispatcherServlet</servlet-name>
         <servlet-class>com.example.javawebtest01.core.web.DispatcherServlet</servlet-class>

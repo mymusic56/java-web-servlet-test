@@ -76,7 +76,7 @@ public class DispatcherServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String pathInfo = request.getPathInfo();
-        System.out.println("pathInfo = " + pathInfo);
+        System.out.println("DispatcherServlet#doGet pathInfo = " + pathInfo);
 
         ServletContext servletContext = request.getServletContext();
 
