@@ -19,6 +19,7 @@
         <servlet-name>DispatcherServlet</servlet-name>
         <servlet-class>com.example.javawebtest01.core.web.DispatcherServlet</servlet-class>
         <init-param>
+            <!-- ServletConfig -->
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/mvc-servlet.xml</param-value>
         </init-param>

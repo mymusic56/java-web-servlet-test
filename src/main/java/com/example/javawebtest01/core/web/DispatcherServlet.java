@@ -43,12 +43,15 @@ public class DispatcherServlet extends HttpServlet {
 
         System.out.println("DispatcherServlet init()......");
         ServletContext servletContext = getServletContext();
+        // initParameter 没有获取到值
         String initParameter = servletContext.getInitParameter("contextConfigLocation");
+
+        // initParameter 获取到值
+        initParameter = config.getInitParameter("contextConfigLocation");
 
         // todo 获取数据配置文件信息，放入到上下文中
         DBPropertiesUtil.init(servletContext);
 
-        // initParameter 没有获取到值
         if (initParameter == null) {
             System.out.println("contextConfigLocation is null");
 
